@@ -31,7 +31,11 @@ function onBtnStart() {
     hoursEl.textContent = hours;
     minutesEl.textContent = minutes;
     secondsEl.textContent = seconds;
-    if (deltaTime === 0) {
+    if (deltaTime < 0) {
+      daysEl.textContent = '00';
+      hoursEl.textContent = '00';
+      minutesEl.textContent = '00';
+      secondsEl.textContent = '00';
       clearInterval(intervalTimer);
     }
   }, 1000);
